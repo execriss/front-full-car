@@ -40,9 +40,6 @@ function Login() {
           </Alert>
         </Snackbar>
       </Stack>
-      <div className={loginStyles.by}>
-        Creado por: @souldevcd. No olvides los créditos...
-      </div>
     </div>
 
   )
