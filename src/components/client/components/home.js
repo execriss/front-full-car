@@ -32,12 +32,12 @@ function Home() {
   const addProduct = (productToAdd, amountToAdd) => {
     addToCart({ amountToAdd, productToAdd })
   }
-
+console.log(roles);
   return (
     <div className={homeStyle.container}>
       <div className={homeStyle.title_container}>
         <div>
-          {roles.length > 1 ? <Button variant="text" color='success'
+          {roles[0].id === 2 ? <Button variant="text" color='success'
             id="button" onClick={handleOpenModal}>
             Añadir nuevo producto
           </Button> : null}
