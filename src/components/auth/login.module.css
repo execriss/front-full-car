@@ -16,12 +16,3 @@
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
-.by{
-    margin-top: 1rem;
-    padding: 0.5rem;
-    border-radius: 16px;
-    background-color: rgba(0, 0, 0, 0.562);
-    color: rgb(180, 180, 180);
-    font-weight: 500;
-    font-size: 1.2rem;
-}
