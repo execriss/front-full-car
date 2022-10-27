@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import loginStyles from './login.module.css';
 import { submitLogin } from '../../services/auth'
+import loginPng from '../../img/login.png'
 function Login() {
   var navigate = useNavigate()
   const [loginData, setLoginData] = useState({ userName: "", password: "" })
@@ -22,17 +23,17 @@ function Login() {
   return (
     <div className={loginStyles.container}>
       <Stack spacing={2} className={loginStyles.card} justifyContent="center" alignItems="center">
-        <Typography variant="h4" component="h2" fontWeight={600}>
+        <Typography variant="h4" component="h2" fontWeight={800} color={'#aaa'}>
           Bienvenido
         </Typography>
-        <img src='https://cdn-icons-png.flaticon.com/512/1040/1040254.png' alt='logo' height={100} />
-        <TextField id="userName" label="Usuario" variant="outlined" onChange={e => handleForm(e)} value={loginData.userName} />
+        <img src={loginPng} alt='logo' height={100} />
+        <TextField style={{color: '#ccc'}} id="userName" label="Usuario" variant="outlined" onChange={e => handleForm(e)} value={loginData.userName} />
         <TextField type='password' id="password" label="Contraseña" variant="outlined" onChange={e => handleForm(e)} value={loginData.password} />
-        <Button variant="contained" className='btn' onClick={() => {
+        <Button variant="outlined" style={{color: 'white', background: '#ccc'}} onClick={() => {
           submitLogin({ loginData, setWrongCredentials, navigate, setOpen })
         }}
         >Iniciar Sesión</Button>
-        <Button variant="text" color='success' href='/register'>Crear cuenta</Button>
+        <Button variant="text" style={{color: '#aaa'}} href='/register'>Crear cuenta</Button>
         <Snackbar open={open} autoHideDuration={1500} onClose={handleClose}
           anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
           <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
