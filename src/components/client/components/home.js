@@ -40,26 +40,26 @@ console.log(roles);
     <div className={homeStyle.container}>
       <div className={homeStyle.title_container}>
         <div>
-          {roles[0].id === 2 ? <Button variant="text" color='success'
+          {roles[0].id === 2 ? <Button variant="text" style={{color: '#aaa'}}
             id="button" onClick={handleOpenModal}>
             Añadir nuevo producto
           </Button> : null}
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide container" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src='http://www.abchoy.com.ar/fotos/abchoy/20180706_tandil_repuestos_00.jpg' height='500px' class="d-block w-100" style={{borderRadius: '20px'}} alt="..."/>
+            </div>
             <div class="carousel-item active">
-              <img src={carLogo} class="d-block w-100" alt="..."/>
+              <img src='http://www.abchoy.com.ar/fotos/abchoy/20180706_tandil_repuestos_03.jpg' height='500px' class="d-block w-100" style={{borderRadius: '20px'}} alt="..."/>
             </div>
             <div class="carousel-item">
-              <img src={carLogo2} class="d-block w-100" alt="..."/>
-            </div>
-            <div class="carousel-item">
-              <img src={carLogo3} class="d-block w-100" alt="..."/>
+              <img src='http://www.abchoy.com.ar/fotos/abchoy/20180706_tandil_repuestos_06.jpg' height='500px' class="d-block w-100" style={{borderRadius: '20px'}} alt="..."/>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -78,9 +78,9 @@ console.log(roles);
           Productos a mejor precio
         </Typography>
       </div>
-      <Grid container spacing={3} className={homeStyle.grid} mb={2}>
+      <Grid container spacing={6} className={homeStyle.grid} mb={2} mt={5}>
         {bestProductList.map(productItem =>
-          <Grid item xs={12} md={3} style={{ position: 'relative' }} key={productItem.id}>
+          <Grid item xs={12} md={3} style={{ position: 'relative', boxShadow: '5px 5px 5px #ccc', borderRadius: '20px' }} key={productItem.id}>
             <IconButton color='primary' onClick={() => {
               addProduct(productItem, 1)
             }}
