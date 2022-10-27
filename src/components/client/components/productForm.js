@@ -54,6 +54,20 @@ function ProductForm(props) {
                     />
                     <TextField
                         required
+                        id="brand"
+                        label="Marca"
+                        onChange={e => handleProductForm(e)}
+                        value={product.brand}
+                    />
+                    <TextField
+                        required
+                        id="import"
+                        label="Importado"
+                        onChange={e => handleProductForm(e)}
+                        value={product.import}
+                    />
+                    <TextField
+                        required
                         id="price"
                         label="Precio"
                         type="number"

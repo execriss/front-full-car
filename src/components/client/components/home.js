@@ -6,6 +6,9 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { getUserDetails } from '../../../services/auth'
 import ProductForm from '../../client/components/productForm'
 import { getAllProducts, getBestProducts } from '../../../services/product'
+import carLogo from '../../../img/carousel1.jpg'
+import carLogo2 from '../../../img/carousel2.jpg'
+import carLogo3 from '../../../img/carousel3.jpg'
 import { addToCart } from '../../../services/shoppingCart'
 function Home() {
   const [roles, setUserRole] = useState([{}])
@@ -41,6 +44,32 @@ console.log(roles);
             id="button" onClick={handleOpenModal}>
             Añadir nuevo producto
           </Button> : null}
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide container" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src={carLogo} class="d-block w-100" alt="..."/>
+            </div>
+            <div class="carousel-item">
+              <img src={carLogo2} class="d-block w-100" alt="..."/>
+            </div>
+            <div class="carousel-item">
+              <img src={carLogo3} class="d-block w-100" alt="..."/>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
         <Typography variant="span" fontSize={35} component="h2" ml={1} fontWeight={600}>
           Destacados
