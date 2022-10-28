@@ -79,7 +79,7 @@ function Header() {
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contacto">
+            <a class="nav-link" href="/store/contact">
               Contacto
             </a>
           </li>

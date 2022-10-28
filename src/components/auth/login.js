@@ -23,13 +23,13 @@ function Login() {
   return (
     <div className={loginStyles.container}>
       <Stack spacing={2} className={loginStyles.card} justifyContent="center" alignItems="center">
-        <Typography variant="h4" component="h2" fontWeight={800} color={'#aaa'}>
+        <Typography variant="h4" component="h2" fontWeight={500} color={'#aaa'} fontFamily={'fantasy'}>
           Bienvenido
         </Typography>
         <img src={loginPng} alt='logo' height={100} />
         <TextField style={{color: '#ccc'}} id="userName" label="Usuario" variant="outlined" onChange={e => handleForm(e)} value={loginData.userName} />
         <TextField type='password' id="password" label="Contraseña" variant="outlined" onChange={e => handleForm(e)} value={loginData.password} />
-        <Button variant="outlined" style={{color: 'white', background: '#ccc'}} onClick={() => {
+        <Button variant="outlined" style={{color: 'black', background: '#ccc'}} onClick={() => {
           submitLogin({ loginData, setWrongCredentials, navigate, setOpen })
         }}
         >Iniciar Sesión</Button>

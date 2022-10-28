@@ -6,6 +6,7 @@ import Client from './components/client/client'
 import Home from './components/client/components/home'
 import Detail from './components/client/components/detail'
 import Cart from './components/client/components/cart'
+import Contact from './components/client/components/contact';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="" element={<Home />} />
         <Route path="detail/:id/:category" element={<Detail />} />
         <Route path="cart" element={<Cart />} />
+        <Route path='contact' element={<Contact />} />
       </Route>
     </Routes>
   );
