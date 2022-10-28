@@ -83,7 +83,7 @@ console.log(roles);
       </div>
       <Grid container spacing={6} className={homeStyle.grid} mb={2} mt={5}>
         {bestProductList.map(productItem =>
-          <Grid item xs={12} md={3} style={{ position: 'relative', boxShadow: '5px 5px 5px #ccc', borderRadius: '20px' }} key={productItem.id}>
+          <Grid item xs={12} md={3} style={{ position: 'relative'}} key={productItem.id}>
             <IconButton color='primary' onClick={() => {
               addProduct(productItem, 1)
             }}
