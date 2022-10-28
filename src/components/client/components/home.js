@@ -10,6 +10,7 @@ import carLogo from '../../../img/carousel1.jpg'
 import carLogo2 from '../../../img/carousel2.jpg'
 import carLogo3 from '../../../img/carousel3.jpg'
 import { addToCart } from '../../../services/shoppingCart'
+import Footer from './Footer';
 function Home() {
   const [roles, setUserRole] = useState([{}])
   const [productList, setProductList] = useState([])
@@ -71,11 +72,13 @@ console.log(roles);
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <Typography variant="span" fontSize={35} component="h2" ml={1} fontWeight={600}>
-          Destacados
+        <Typography variant="span" fontSize={35} component="h2" ml={1} fontWeight={600} fontFamily={'fantasy'} width={'25%'}>
+          <marquee direction="RIGHT">
+            DESTACADOS
+          </marquee>
         </Typography>
-        <Typography variant="p" fontSize={20} component="h2" ml={1} fontWeight={400}>
-          Productos a mejor precio
+        <Typography variant="p" fontSize={20} component="h2" ml={1} fontWeight={400} fontFamily={'fantasy'}> 
+          Productos al mejor precio
         </Typography>
       </div>
       <Grid container spacing={6} className={homeStyle.grid} mb={2} mt={5}>
@@ -93,7 +96,7 @@ console.log(roles);
       </Grid>
       <Divider></Divider>
       <div className={homeStyle.title_container}>
-        <Typography variant="span" fontSize={30} component="h2" ml={1} fontWeight={600}>
+        <Typography variant="p" fontSize={36} component="h2" ml={1} fontWeight={600} fontFamily={'fantasy'}> 
           Todos los productos
         </Typography>
       </div>
@@ -102,11 +105,12 @@ console.log(roles);
           <Grid item xs={12} md={3} style={{ position: 'relative' }} key={productItem.id}>
             <IconButton aria-label="add to shopping cart" color='primary' onClick={() => {
               addProduct(productItem, 1)
+              alert('Producto agregado al carrito')
             }}
               className={homeStyle.add__button}>
               <AddShoppingCartIcon />
             </IconButton>
-            <ProductCard product={productItem} />
+            <ProductCard product={productItem}/>
           </Grid>)}
       </Grid>
       <Snackbar open={showProductFeedback.show} autoHideDuration={2000} onClose={closeProductFeedback}
@@ -118,6 +122,7 @@ console.log(roles);
       <ProductForm setRefresh={setRefresh} openModal={openModal} setOpenModal={setOpenModal}
         setProductFeedback={setProductFeedback} edit={false}
         setProduct={setProduct} product={product} />
+        <Footer />
     </div>
     
   )

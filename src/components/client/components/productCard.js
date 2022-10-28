@@ -6,7 +6,7 @@ function ProductCard(props) {
     return (
         <a className={cardStyle.card} href={'//localhost:3000/store/detail/' + product.id + '/' + product.category}>
             <div className={cardStyle.img_container}>
-                <img src={product.image} alt='logo' className={cardStyle.img} />
+                <img src={product.image} alt='logo' width={'50%'} height={'100%'} />
             </div>
             <article className={cardStyle.description}>
                 <Typography variant="p" mt={1} fontSize={20} component="h1" fontWeight={500}>
