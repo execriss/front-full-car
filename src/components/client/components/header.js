@@ -93,9 +93,6 @@ function Header() {
       <form class="form-inline d-flex ">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"/>
       </form>
-      <IconButton aria-label="delete" style={{color: '#ccc'}} size="large">
-        <LocalMallIcon />
-      </IconButton>
       <IconButton
         aria-label="delete"
         color="primary"
