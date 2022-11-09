@@ -29,6 +29,10 @@ function Header() {
   const closeSession = () => {
     logout({ navigate });
   };
+
+  const search = (e) => {
+    localStorage.setItem("search", e.target.value)
+  }
   return (
     <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top bg-dark">
       <a class="navbar-brand ms-2" href="/store">
@@ -54,28 +58,23 @@ function Header() {
             </a>
           </li>
           <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="/categorias"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Categorias
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">
-                Action
-              </a>
-              <a class="dropdown-item" href="#">
-                Another action
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">
-                Something else here
-              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="/store/motor">Motor</a></li>
+                    <li><a class="dropdown-item" href="/store/iluminacion">Iluminación</a></li>
+                    <li><a class="dropdown-item" href="/store/tren-delantero">Tren Delantero</a></li>
+                    <li><a class="dropdown-item" href="/store/lubricantes">Lubricantes</a></li>
+                  </ul>
+                </li>
+              </ul>
             </div>
           </li>
           <li class="nav-item">
@@ -83,15 +82,10 @@ function Header() {
               Contacto
             </a>
           </li>
-          {/* <li class="nav-item">
-            <a class="nav-link disabled" href="#">
-              Disabled
-            </a>
-          </li> */}
         </ul>
       </div>
       <form class="form-inline d-flex ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"/>
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" onChange={(e) => search(e)}/>
       </form>
       <IconButton
         aria-label="delete"

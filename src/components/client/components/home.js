@@ -19,7 +19,6 @@ function Home() {
   const [refresh, setRefresh] = useState(false)
   const [openModal, setOpenModal] = useState(false)
   const [showProductFeedback, setProductFeedback] = React.useState({ show: false, status: false, infoText: '' })
-
   useEffect(() => {
     getUserDetails({ setUserRole })
     getAllProducts({ setProductList })
@@ -36,7 +35,6 @@ function Home() {
   const addProduct = (productToAdd, amountToAdd) => {
     addToCart({ amountToAdd, productToAdd })
   }
-console.log(roles);
   return (
     <div className={homeStyle.container}>
       <div className={homeStyle.title_container}>

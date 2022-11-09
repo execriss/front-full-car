@@ -7,6 +7,30 @@ export const getAllProducts = ({ setProductList }) => {
         setProductList(response.data)
     })
 }
+export const getProductsMotor = ({ setProductList }) => {
+    const productUrl = getApiUrl("product/all")
+    axios.get(productUrl, { withCredentials: true }).then((response) => {
+        setProductList(response.data.filter(article => article.category === 'Motor'))
+    })
+}
+export const getProductsIluminacion = ({ setProductList }) => {
+    const productUrl = getApiUrl("product/all")
+    axios.get(productUrl, { withCredentials: true }).then((response) => {
+        setProductList(response.data.filter(article => article.category === 'Iluminacion'))
+    })
+}
+export const getProductsLubricantes = ({ setProductList }) => {
+    const productUrl = getApiUrl("product/all")
+    axios.get(productUrl, { withCredentials: true }).then((response) => {
+        setProductList(response.data.filter(article => article.category === 'Lubricantes'))
+    })
+}
+export const getProductsTrenDelantero = ({ setProductList }) => {
+    const productUrl = getApiUrl("product/all")
+    axios.get(productUrl, { withCredentials: true }).then((response) => {
+        setProductList(response.data.filter(article => article.category === 'Tren Delantero'))
+    })
+}
 export const getBestProducts = ({ setBestProductList }) => {
     const productUrl = getApiUrl("product/best")
     axios.get(productUrl, { withCredentials: true }).then((response) => {
