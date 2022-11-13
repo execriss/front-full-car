@@ -7,6 +7,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
 import carLogo from "../../../img/sport-car.png";
 import { logout } from "../../../services/auth";
+import Logo from '../../../img/fullcarlogo.png'
+
 function Header() {
   var navigate = useNavigate();
   let [number, setNumber] = useState(0);
@@ -34,9 +36,9 @@ function Header() {
     localStorage.setItem("search", e.target.value)
   }
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top bg-dark">
-      <a class="navbar-brand ms-2" href="/store">
-        Full Car
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style={{background: '#ccc'}}>
+      <a class="mx-3" href="/store">
+      <img src={Logo} alt='logo' height={50} />
       </a>
       <button
         class="navbar-toggler"
@@ -53,7 +55,7 @@ function Header() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/store">
+            <a class="nav-link fw-bold" href="/store">
               Inicio
             </a>
           </li>
@@ -64,7 +66,7 @@ function Header() {
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Categorias
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -78,7 +80,7 @@ function Header() {
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/store/contact">
+            <a class="nav-link fw-bold" href="/store/contact">
               Contacto
             </a>
           </li>
@@ -94,7 +96,7 @@ function Header() {
         size="large"
       >
         <Badge badgeContent={number} color="primary">
-          <ShoppingCartIcon style={{color: '#ccc'}} />
+          <ShoppingCartIcon style={{color: 'black'}} />
         </Badge>
       </IconButton>
       <IconButton
