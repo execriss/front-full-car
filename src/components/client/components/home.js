@@ -15,7 +15,7 @@ function Home() {
   const [roles, setUserRole] = useState([{}])
   const [productList, setProductList] = useState([])
   const [bestProductList, setBestProductList] = useState([])
-  const [product, setProduct] = useState({ name: "", price: 0, description: "", category: "", image: "" })
+  const [product, setProduct] = useState({ name: "", price: 0, description: "", category: "", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5kRaj6zp_fDTtU34h8cem3zIKtD2d7LAOQSzoaS7Nyg&s" })
   const [refresh, setRefresh] = useState(false)
   const [openModal, setOpenModal] = useState(false)
   const [showProductFeedback, setProductFeedback] = React.useState({ show: false, status: false, infoText: '' })

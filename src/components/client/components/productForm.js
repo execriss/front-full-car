@@ -1,11 +1,17 @@
-import { Box, Button, Modal, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, InputLabel, MenuItem, Modal, Select, Stack, TextField, Typography } from '@mui/material';
 import React from 'react'
 import { saveProduct } from '../../../services/product'
 function ProductForm(props) {
     const { openModal, setOpenModal, edit, setProductFeedback, setProduct, product, setRefresh } = props;
+    const [category, setCategory] = React.useState('');
+
+    const handleChange = (event) => {
+      setCategory(event.target.value);
+    }
     const handleProductForm = e => {
         const tempData = { ...product }
         tempData[e.target.id] = e.target.value
+        tempData.category = category
         setProduct(tempData)
     }
     const handleCloseModal = () => {
@@ -51,6 +57,7 @@ function ProductForm(props) {
                         label="Nombre"
                         onChange={e => handleProductForm(e)}
                         value={product.name}
+                        inputProps={{ maxLength: 20 }}
                     />
                     <TextField
                         required
@@ -58,13 +65,7 @@ function ProductForm(props) {
                         label="Marca"
                         onChange={e => handleProductForm(e)}
                         value={product.brand}
-                    />
-                    <TextField
-                        required
-                        id="import"
-                        label="Importado"
-                        onChange={e => handleProductForm(e)}
-                        value={product.import}
+                        inputProps={{ maxLength: 20 }}
                     />
                     <TextField
                         required
@@ -73,25 +74,36 @@ function ProductForm(props) {
                         type="number"
                         onChange={e => handleProductForm(e)}
                         value={product.price}
+                        inputProps={{ maxLength: 10 }}
+                        onInput = {(e) =>{
+                            e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,12)
+                        }}
                     />
-                    <TextField
-                        required
-                        id="category"
-                        label="Categoria"
-                        onChange={e => handleProductForm(e)}
-                        value={product.category}
-                    />
+                    <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
+                    <Select
+                    labelId="demo-simple-select-label"
+                    id="category"
+                    // value={product.category}
+                    label="Categoria"
+                    value={category}
+                    onChange={handleChange}
+                    >
+                        <MenuItem value={'Motor'}>Motor</MenuItem>
+                        <MenuItem value={'Iluminación'}>Iluminación</MenuItem>
+                        <MenuItem value={'Tren Delantero'}>Tren Delantero</MenuItem>
+                        <MenuItem value={'Lubricantes'}>Lubricantes</MenuItem>
+                    </Select>
                     <TextField
                         required
                         id="description"
                         label="Descripción"
                         onChange={e => handleProductForm(e)}
                         value={product.description}
+                        inputProps={{ maxLength: 60 }}
                     />
                     <TextField
-                        required
                         id="image"
-                        label="Imágen"
+                        label="URL de la Imágen"
                         onChange={e => handleProductForm(e)}
                         value={product.image}
                     />
