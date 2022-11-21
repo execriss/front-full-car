@@ -53,3 +53,9 @@ export const getRelatedProducts = async ({ category, id }) => {
     const response = await axios.get(productUrl, { withCredentials: true })
     return response.data
 }
+export const getProductByName =  ({ setProductList }) => {
+    const productUrl = getApiUrl("product/search")
+    axios.get(productUrl, { withCredentials: true }).then((response) => {
+        setProductList(response.target.value)
+    })
+}

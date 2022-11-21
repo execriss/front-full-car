@@ -16,18 +16,43 @@ function ProductForm(props) {
     }
     const handleCloseModal = () => {
         setOpenModal(false)
-        setProduct(edit ? product : { name: "", price: 0, description: "", category: "", image: "" })
+        setProduct(edit ? product : { name: "",marca: "",importado:"", price: 0, description: "", category: "", image: "" })
     };
     const saveModalProduct = () => {
         setRefresh(false)
         saveProduct({ product, edit }).then(response => {
-            setProduct(edit ? product : { name: "", price: 0, description: "", category: "", image: "" })
+            setProduct(edit ? product : { name: "",marca:"",importado: "", price: 0, description: "", category: "", image: "" })
             setProductFeedback({ show: true, status: true, infoText: response.data.infoMessage })
             setRefresh(true)
         }).catch(error => {
             setProductFeedback({ show: true, status: false, infoText: error.response.data.infoMessage })
+            console.log(error.response.data.infoMessage);
         })
-    }
+    };
+      const  validarFormulario = () => {
+            let campo = this.state.campo;
+            let error = {};
+            let formularioValido = true;
+         
+            // Nombres y Apellidos
+            if (!campo["nombre"]) {
+                formularioValido = false;
+                error["nombre"] = "Por favor, ingresa el Nombre.";
+            }
+            if (!campo["category"]) {
+                formularioValido = false;
+                error["area"] = "Por favor, ingresa una Categoria.";
+            }
+            if (!campo["price"]) {
+                formularioValido = false;
+                error["price"] = "Por favor, ingresa el Precio.";
+            }
+            if (!campo["image"]) {
+                formularioValido = false;
+                error["image"] = "Por favor, ingresa un link.";
+            }
+    };
+    
     return (
         <Modal
             open={openModal}
@@ -55,16 +80,17 @@ function ProductForm(props) {
                         required
                         id="name"
                         label="Nombre"
+                        aria-describedby="nHelp"
                         onChange={e => handleProductForm(e)}
                         value={product.name}
                         inputProps={{ maxLength: 20 }}
                     />
                     <TextField
                         required
-                        id="brand"
+                        id="marca"
                         label="Marca"
                         onChange={e => handleProductForm(e)}
-                        value={product.brand}
+                        value={product.marca}
                         inputProps={{ maxLength: 20 }}
                     />
                     <TextField
