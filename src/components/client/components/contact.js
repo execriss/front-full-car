@@ -1,7 +1,10 @@
-import { Button, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 function Contact() {
+  const submitContact = (e) => {
+    alert('¡MENSAJE ENVIADO CORRECTAMENTE!')
+  }
   return (
     <div className="container mt-5">
       <section class="mb-4">
@@ -21,76 +24,67 @@ function Contact() {
             <form
               id="contact-form"
               name="contact-form"
-              action="mail.php"
-              method="POST"
+              onSubmit={submitContact}
             >
               <div class="row">
                 <div class="col-md-6">
                   <div class="md-form mb-0">
-                    <input
-                      type="text"
+                    <TextField
                       id="name"
-                      name="name"
-                      class="form-control"
+                      label="Nombre Completo"
+                      required
+                      inputProps={{ maxLength: 30 }}
                     />
-                    <label for="name" class="">
-                      Nombre Completo
-                    </label>
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="md-form mb-0">
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      class="form-control"
+                  <TextField
+                      id="street"
+                      type={'email'}
+                      label="Dirección de Correo"
+                      required
+                      inputProps={{ maxLength: 25 }}
                     />
-                    <label for="email" class="">
-                      Dirección de correo
-                    </label>
                   </div>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12">
-                  <div class="md-form mb-0">
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      class="form-control"
+                  <div class="md-form mb-0 mt-3">
+                    <TextField
+                      id="theme"
+                      label="Asunto"
+                      required
+                      inputProps={{ maxLength: 20 }}
                     />
-                    <label for="subject" class="">
-                      Asunto
-                    </label>
                   </div>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12">
-                  <div class="md-form">
-                    <textarea
-                      type="text"
+                  <div class="md-form mt-4">
+                  <TextField
                       id="message"
-                      name="message"
-                      rows="2"
-                      class="form-control md-textarea"
-                    ></textarea>
-                    <label for="message">Consulta</label>
+                      label="Mensaje"
+                      placeholder="Hasta 140 caracteres"
+                      required
+                      fullWidth
+                      inputProps={{ maxLength: 140 }}
+                    />
                   </div>
                 </div>
+              </div>
+              <div>
+                <Button variant="text" style={{color: '#aaa', fontSize: '20px', marginTop: '10px'}} id="button" type="submit" >
+                  ENVIAR
+                </Button>
               </div>
             </form>
 
-            <div>
-              <Button variant="text" style={{color: '#aaa', fontSize: '20px', marginTop: '10px'}} id="button" >
-                ENVIAR
-              </Button>
-            </div>
             <div class="status"></div>
           </div>
 

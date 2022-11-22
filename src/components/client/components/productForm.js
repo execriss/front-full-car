@@ -73,9 +73,14 @@ function ProductForm(props) {
                 p: 2,
             }}>
                 <Stack spacing={1}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        {edit ? "Editar producto" : "Nuevo producto"}
-                    </Typography>
+                    <div className='d-flex flex-row justify-content-between'>
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
+                            {edit ? "Editar producto" : "Nuevo producto"}
+                        </Typography>
+                        <Typography id="modal-modal-title" variant="p" component="button" color={'#aaa'} borderColor={'white'} borde borderRadius={2} onClick={handleCloseModal}>
+                            {"X"}
+                        </Typography>
+                    </div>
                     <TextField
                         required
                         id="name"
