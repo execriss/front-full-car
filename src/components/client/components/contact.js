@@ -1,11 +1,12 @@
 import { Button, TextField, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import Footer from './Footer';
 
 function Contact() {
   const submitContact = (e) => {
     alert('¡MENSAJE ENVIADO CORRECTAMENTE!')
   }
   return (
+    <>
     <div className="container mt-5">
       <section class="mb-4">
         <Typography variant="span" marginBottom={10} fontSize={35} component="h2" ml={1} fontWeight={600} fontFamily={'fantasy'} width={'100%'}>
@@ -114,6 +115,8 @@ function Contact() {
         </div>
       </section>
     </div>
+    <Footer/>
+    </>
   );
 }
 

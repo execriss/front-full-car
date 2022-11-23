@@ -10,6 +10,7 @@ import { getProductById, getRelatedProducts } from '../../../services/product'
 import { getUserDetails } from '../../../services/auth'
 import { addToCart } from '../../../services/shoppingCart'
 import ProductForm from '../../client/components/productForm'
+import Footer from './Footer';
 
 function Detail() {
   const [amountToAdd, setAmount] = useState(1)
@@ -38,7 +39,10 @@ function Detail() {
   }, [id, category, refresh])
 
   const add = () => {
-    setAmount(amountToAdd + 1)
+    if(amountToAdd <= 4){
+      setAmount(amountToAdd + 1)
+    }
+    setAmount(5)
   }
   const subtract = () => {
     setAmount(amountToAdd - 1)
@@ -54,6 +58,7 @@ function Detail() {
     setProductFeedback({ show: false });
   };
   return (
+    <>
     <div className={detailStyle.container}>
       <Grid container spacing={3} pt={1}>
         <Grid item xs={12} md={6}>
@@ -113,7 +118,8 @@ function Detail() {
         setProductFeedback={setProductFeedback} edit={true}
         setProduct={setEditProduct} product={editProduct} />}
     </div>
-
+    <Footer/>
+    </>       
   )
 }
 

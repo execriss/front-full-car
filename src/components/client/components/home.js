@@ -6,9 +6,6 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { getUserDetails } from '../../../services/auth'
 import ProductForm from '../../client/components/productForm'
 import { getAllProducts, getBestProducts } from '../../../services/product'
-import carLogo from '../../../img/carousel1.jpg'
-import carLogo2 from '../../../img/carousel2.jpg'
-import carLogo3 from '../../../img/carousel3.jpg'
 import { addToCart } from '../../../services/shoppingCart'
 import Footer from './Footer';
 function Home() {

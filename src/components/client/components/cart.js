@@ -2,6 +2,7 @@ import { Alert, Button, Divider, Grid, IconButton, Snackbar, Stack, Typography }
 import React, { useEffect, useState } from 'react'
 import cartStyle from './cart.module.css'
 import DeleteIcon from '@mui/icons-material/Delete';
+import Footer from './Footer';
 import { getShoppingList, getSaleList, deleteShoppingItem, generateSale } from '../../../services/shoppingCart'
 
 function Cart() {
@@ -55,6 +56,7 @@ function Cart() {
     };
 
     return (
+        <>
         <div className={cartStyle.container}>
             <Grid container spacing={1} className={cartStyle.grid}>
                 <Grid item xs={12} md={8} justifyContent='center'>
@@ -135,6 +137,8 @@ function Cart() {
                 </Alert>
             </Snackbar>
         </div>
+        <Footer/>
+        </>
     )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Logo from '../../../img/fullcarlogo.png'
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
                 <div className='container'>
                     <nav className='row'>
                         <Link to='/' className='col-12 col-md-3 d-flex align-items-center justify-content-start justify-md-content-center'>
-                            <img src='https://lirp.cdn-website.com/fd9241d7/dms3rep/multi/opt/icono-repuestos-432w.png' className='mx-2' height={90}/>
+                            <img src={Logo} alt="logo" className='mx-2' height={90}/>
                         </Link>
                         <ul className='col-12 col-md-3 list-unstyle'>
                         </ul>
@@ -21,13 +22,13 @@ const Footer = () => {
                         </ul>
                         <ul className='col-12 col-md-3 list-unstyle'>
                             <li className='font-weight-bold mb-2 text-center text-md-start'>Redes</li>
-                            <Link to='https://www.facebook.com/' className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
+                            <Link href='https://www.facebook.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
                                 <li className='font-weight-bold mb-2'>Facebook</li>
                             </Link>
-                            <Link to='https://www.instagram.com/' className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
+                            <Link href='https://www.instagram.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
                                 <li className='font-weight-bold mb-2'>Instagram</li>
                             </Link>
-                            <Link to='https://web.whatsapp.com/' className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
+                            <Link href='https://web.whatsapp.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
                                 <li className='font-weight-bold mb-2'>WhatsApp</li>
                             </Link>
                         </ul>

@@ -36,9 +36,13 @@ function Register() {
           Creá tu Cuenta
         </Typography>
         <img src={loginPng} alt='logo' height={100} />
-        <TextField id="userName" onChange={e => handleForm(e)} value={registerData.userName} label="Usuario" variant="outlined" />
-        <TextField id="email" onChange={e => handleForm(e)} value={registerData.email} label="Email" variant="outlined" />
-        <TextField id="password" onChange={e => handleForm(e)} value={registerData.password} label="Contraseña" variant="outlined" />
+        <TextField id="userName" onChange={e => handleForm(e)} value={registerData.userName} label="Usuario" variant="outlined" inputProps={{ maxLength: 20 }} required/>
+        <TextField id="email" onChange={e => handleForm(e)} value={registerData.email} label="Email" variant="outlined" inputProps={{ maxLength: 40 }} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+        <TextField id="password" onChange={e => handleForm(e)} value={registerData.password} label="Contraseña" variant="outlined" inputProps={{ maxLength: 12, minLength: 8 }}required/>
+        <div className={registerStyles.requirements}>
+         <p><span>*</span> La contraseña debe tener 8 dígitos mínimo y 12 máximo.</p>
+         <p><span>*</span> Debe contener 1 minúscula, 1 mayúscula y un número.</p>
+        </div>
         <Button variant="outlined" style={{color: 'black', background: '#ccc'}} onClick={() => { register() }}>
           Registrarse
         </Button>
