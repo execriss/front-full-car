@@ -34,6 +34,7 @@ function Contact() {
                       id="name"
                       label="Nombre Completo"
                       required
+                      type={"text"}
                       inputProps={{ maxLength: 30 }}
                     />
                   </div>
