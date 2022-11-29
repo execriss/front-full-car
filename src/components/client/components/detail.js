@@ -39,10 +39,9 @@ function Detail() {
   }, [id, category, refresh])
 
   const add = () => {
-    if(amountToAdd <= 4){
+    if(amountToAdd <= 9){
       setAmount(amountToAdd + 1)
     }
-    setAmount(5)
   }
   const subtract = () => {
     setAmount(amountToAdd - 1)
