@@ -91,8 +91,10 @@ function Home() {
       </Grid>
       <Divider></Divider>
       <div className={homeStyle.title_container}>
-        <Typography variant="p" fontSize={36} component="h2" ml={1} fontWeight={600} fontFamily={'fantasy'}> 
-          Todos los productos
+        <Typography variant="span" fontSize={35} component="h2" ml={1} fontWeight={600} fontFamily={'fantasy'} width={'25%'}>
+          <marquee direction="RIGHT">
+            PRODUCTOS
+          </marquee>
         </Typography>
       </div>
       <Grid container spacing={3} className={homeStyle.grid} >
