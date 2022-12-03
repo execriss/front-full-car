@@ -22,13 +22,13 @@ const Footer = () => {
                         </ul>
                         <ul className='col-12 col-md-3 list-unstyle'>
                             <li className='font-weight-bold mb-2 text-center text-md-start'>Redes</li>
-                            <Link href='https://www.facebook.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
+                            <Link to='https://www.facebook.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
                                 <li className='font-weight-bold mb-2'>Facebook</li>
                             </Link>
-                            <Link href='https://www.instagram.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
+                            <Link to='https://www.instagram.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
                                 <li className='font-weight-bold mb-2'>Instagram</li>
                             </Link>
-                            <Link href='https://web.whatsapp.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
+                            <Link to='https://web.whatsapp.com/' target="_blank" className='col-12 col-md-3 d-flex align-items-center justify-content-center text-reset'>
                                 <li className='font-weight-bold mb-2'>WhatsApp</li>
                             </Link>
                         </ul>
